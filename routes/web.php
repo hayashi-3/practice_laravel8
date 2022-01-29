@@ -34,3 +34,7 @@ Route::get('/login', [App\Http\Controllers\LoginController::class, 'index'])
 
 Route::post('/login', [App\Http\Controllers\LoginController::class, 'authenticate'])
     ->middleware('guest');
+
+Route::get('/logout', [App\Http\Controllers\LoginController::class, 'logout'])
+    ->middleware('auth')
+    ->name('logout');
